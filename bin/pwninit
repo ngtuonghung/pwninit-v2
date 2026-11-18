@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+dir=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)
+
+if [ ! -x "$dir/.venv/bin/python" ]; then
+    python3 -m venv "$dir/.venv" || { echo "[!] python3 -m venv failed. Install python3-venv and retry." >&2; exit 1; }
+    "$dir/.venv/bin/pip" install -q -r "$dir/requirements.txt"
+fi
+
+exec "$dir/.venv/bin/python" "$dir/src/$(basename "$0").py" "$@"

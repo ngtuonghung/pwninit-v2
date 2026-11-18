@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Env / editors
+.env
+.idea/
+.vscode/
+
+# Local deb cache fallback (pwninit.py get_deb_cache_dir)
+/lib/
+
+# macOS
+.DS_Store

@@ -1,0 +1,1 @@
+PATCHED_BINARY_SUFFIX = "_patched"
